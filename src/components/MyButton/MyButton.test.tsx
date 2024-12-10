@@ -21,7 +21,7 @@ describe('MyButton test:', () => {
         disabled
       />
     )
-    expect(screen.getByRole('button')).toBeDisabled()
+    expect(screen.getByRole('button').getAttribute('disabled')).toBe(true);
   })
 
   it('onClick triggers properly', async () => {
