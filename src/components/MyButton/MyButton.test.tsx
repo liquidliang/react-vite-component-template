@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { afterEach, describe, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { MyButton } from '.'
 
 describe('MyButton test:', () => {
@@ -19,9 +19,10 @@ describe('MyButton test:', () => {
       <MyButton
         label='Testing'
         disabled
+
       />
     )
-    expect(screen.getByRole('button').getAttribute('disabled')).toBe(true);
+    expect(screen.getByRole('button').getAttribute('disabled')).toBe('');
   })
 
   it('onClick triggers properly', async () => {
